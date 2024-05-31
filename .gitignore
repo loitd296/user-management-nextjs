@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+package.json
+package-lock.json
+.prettierrc
+package-lock.json
+package.json
+tailwind.config.ts
+package-lock.json
