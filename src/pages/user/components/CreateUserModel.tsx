@@ -135,7 +135,7 @@ const CreateUserModel: React.FC = () => {
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded shadow-lg w-1/3">
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
-              <h3 className="text-3xl font-semibold">General Info</h3>
+              <h3 className="text-3xl font-semibold text-black">Create User</h3>
             </div>
             <form onSubmit={handleSubmit} className="text-black p-6 flex-auto">
               <div className="mb-4">

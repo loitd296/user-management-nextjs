@@ -21,6 +21,9 @@ const EditUserModal: React.FC<EditUserModalProps> = ({ user, isOpen, onClose }) 
       [name]: value
     }));
   };
+  const handleCancel = () => {
+    onClose(); // Close the modal without saving changes
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,6 +102,9 @@ const EditUserModal: React.FC<EditUserModalProps> = ({ user, isOpen, onClose }) 
             </select>
           </div>
           <div className="flex justify-end">
+          <button type="button" onClick={handleCancel} className="px-4 py-2 bg-gray-500 text-white rounded mr-2">
+              Cancel
+            </button>
             <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
               Save
             </button>
