@@ -1,4 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Result:
+| Feature | Image |
+|---------|-------|
+| Home Page | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/e02a5e8f-8ddb-4c29-8a76-f78a190b20ce)](#) |
+| User Management Page | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/b97d2a90-87b5-4398-aa21-310358a58be1)](#) |
+| Create User Modal | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/a114dbc0-e092-47a9-9caf-830a1c3d97a4)](#) |
+| Search User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/8d5f4293-3e5a-4b54-8e3e-3be624bc46f2)](#) |
+| Update User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/e2f1881b-11e9-4ba7-ab7d-faf669f227b3)](#) |
+| Delete User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/8156f967-bfe6-4615-b429-611089d7d76b)](#) |
+
+
 
 ## Getting Started
 
