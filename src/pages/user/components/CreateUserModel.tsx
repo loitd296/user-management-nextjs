@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { User } from '..';
+import { User } from './UserTable';
 
-const CreateUserModel: React.FC = () => {
+interface CreateUserModelProps {
+  onSuccess: (newUser: User) => void;
+}
+
+const CreateUserModel: React.FC<CreateUserModelProps> = ({ onSuccess }) => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
@@ -16,8 +20,6 @@ const CreateUserModel: React.FC = () => {
     role: '',
     project: '',
   });
-
-  const [users, setUsers] = useState<User[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -74,24 +76,6 @@ const CreateUserModel: React.FC = () => {
     }
 
     try {
-      // Fetch the latest users from the API
-      const usersResponse = await fetch('http://localhost:4000/user');
-      if (!usersResponse.ok) {
-        throw new Error('Failed to fetch users');
-      }
-      const users: User[] = await usersResponse.json();
-
-      // Check if the username already exists
-      const existingUser = users.find(u => u.username === formData.username);
-      if (existingUser) {
-        setErrors((prevErrors) => ({
-          ...prevErrors,
-          username: 'Username already exists',
-        }));
-        return;
-      }
-
-      // If username does not exist, proceed with creating the user
       const response = await fetch('http://localhost:4000/user', {
         method: 'POST',
         headers: {
@@ -106,12 +90,10 @@ const CreateUserModel: React.FC = () => {
 
       const newUser: User = await response.json();
 
-      // Assuming setUsers is available in this component and used to update the state in parent component
-      setUsers(prevUsers => [...prevUsers, newUser]);
+      onSuccess(newUser); // Call the callback function with the new user data
 
       console.log('User created successfully');
       setShowModal(false);
-
     } catch (error) {
       console.error('Error creating user:', error);
       setErrors((prevErrors) => ({
@@ -123,21 +105,27 @@ const CreateUserModel: React.FC = () => {
 
   return (
     <>
+      {/* Button to trigger the modal */}
       <button
-        className="bg-blue-200 text-black active:bg-blue-500 
-        font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+        className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
         type="button"
         onClick={() => setShowModal(true)}
       >
         Create User
       </button>
+      
+      {/* Modal content */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white p-4 rounded shadow-lg w-1/3">
+          {/* Modal body */}
+          <div className="bg-white p-4 rounded shadow-lg sm:w-2/3 lg:w-1/2 xl:w-1/3">
+            {/* Modal header */}
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
               <h3 className="text-3xl font-semibold text-black">Create User</h3>
             </div>
+            {/* Modal form */}
             <form onSubmit={handleSubmit} className="text-black p-6 flex-auto">
+              {/* Username field */}
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Username</label>
                 <input
@@ -149,6 +137,7 @@ const CreateUserModel: React.FC = () => {
                 />
                 {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
               </div>
+              {/* Full Name field */}
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Full Name</label>
                 <input
@@ -160,6 +149,7 @@ const CreateUserModel: React.FC = () => {
                 />
                 {errors.fullname && <p className="text-red-500 text-sm">{errors.fullname}</p>}
               </div>
+              {/* Role field */}
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Role</label>
                 <input
@@ -171,6 +161,7 @@ const CreateUserModel: React.FC = () => {
                 />
                 {errors.role && <p className="text-red-500 text-sm">{errors.role}</p>}
               </div>
+              {/* Project field */}
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">Projects</label>
                 <input
@@ -182,6 +173,7 @@ const CreateUserModel: React.FC = () => {
                 />
                 {errors.project && <p className="text-red-500 text-sm">{errors.project}</p>}
               </div>
+              {/* Buttons */}
               <div className="flex justify-end">
                 <button
                   type="button"

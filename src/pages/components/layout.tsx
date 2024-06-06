@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
-
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 

@@ -1,12 +1,10 @@
-// components/DeleteUserModal.tsx
-
 import React from 'react';
 
 interface DeleteUserModalProps {
   username: string;
   isOpen: boolean;
   onClose: () => void;
-  onDelete: (userId: number) => void;
+  onDelete: () => void;
 }
 
 const DeleteUserModal: React.FC<DeleteUserModalProps> = ({ username, isOpen, onClose, onDelete }) => {
@@ -14,9 +12,9 @@ const DeleteUserModal: React.FC<DeleteUserModalProps> = ({ username, isOpen, onC
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="bg-white p-4 rounded shadow-lg w-1/3">
-        <h2 className="text-xl mb-4 text-black">Confirm Delete</h2>
-        <p className='text-black'>Are you sure you want to delete the user <strong>{username}</strong>?</p>
+      <div className="bg-white p-4 rounded shadow-lg w-full max-w-md mx-4 sm:w-2/3 lg:w-1/2 xl:w-1/3">
+        <h2 className="text-2xl mb-4 text-black">Confirm Delete</h2>
+        <p className="text-black">Are you sure you want to delete the user <strong>{username}</strong>?</p>
         <div className="flex justify-end mt-4">
           <button
             type="button"
@@ -27,7 +25,7 @@ const DeleteUserModal: React.FC<DeleteUserModalProps> = ({ username, isOpen, onC
           </button>
           <button
             type="button"
-            onClick={onDelete} 
+            onClick={onDelete}
             className="px-4 py-2 bg-red-500 text-white rounded"
           >
             Delete
