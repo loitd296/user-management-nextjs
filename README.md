@@ -4,10 +4,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 |---------|-------|
 | Home Page | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/e02a5e8f-8ddb-4c29-8a76-f78a190b20ce)](#) |
 | User Management Page | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/b97d2a90-87b5-4398-aa21-310358a58be1)](#) |
-| Create User Modal | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/a114dbc0-e092-47a9-9caf-830a1c3d97a4)](#) |
-| Search User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/8d5f4293-3e5a-4b54-8e3e-3be624bc46f2)](#) |
-| Update User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/e2f1881b-11e9-4ba7-ab7d-faf669f227b3)](#) |
-| Delete User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/8156f967-bfe6-4615-b429-611089d7d76b)](#) |
+| Create User Modal | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/edbd3ea4-5c67-4d73-baa3-c2af0a6fe506)(#) |
+| Search User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/42f4f89f-023a-4a04-a403-7fffb14fdfc1)|
+| Update User |![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/aba0a41d-4a3f-4c7e-8d27-8b639911923d)|
+| Delete User | ![image](https://github.com/loitd296/user-management-nextjs/assets/97017479/c3f9d198-9116-49c8-9735-1e3bc975a1e8)(#)|
 
 
 
